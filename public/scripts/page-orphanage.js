@@ -38,9 +38,11 @@ function selectImage(event){
   }
 
   // selecionar imagem clicada
+  const image = button.children[0]
+  const imageContainer = document.querySelector('.orphanage-details > img')
 
   // atualizar container de imagem
-
+  imageContainer.src = image.src
   // adicionar a classe .active para este botão
   button.classList.add('active')
 }
