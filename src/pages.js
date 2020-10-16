@@ -41,7 +41,7 @@ module.exports = {
   createOrphanage(req, res){
     return res.render('create-orphanage')
   },
-  saveOrphanage(req, res){
+  async saveOrphanage(req, res){
     const fields = req.body
 
     // validar se campos estão preenchidos
@@ -64,6 +64,7 @@ module.exports = {
         open_on_weekends: fields.open_on_weekends,
       })
       // redirecionamento
+      return res.redirect('/orphanages')
 
     } catch(error){
       console.log(error)
